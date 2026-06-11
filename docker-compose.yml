@@ -13,7 +13,7 @@ services:
       - mysql-data:/var/lib/mysql
 
   mysite:
-    build: .
+    build: .docker run -d --name mysite -p 8080:8080 mysite
     container_name: mysite
     restart: always
     depends_on:
