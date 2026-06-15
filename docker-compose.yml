@@ -1,16 +1,16 @@
 services:
-  mysql:mysql:
-  image: mysql:8
-  container_name: mysql
-  restart: always
-  environment:
-    MYSQL_ROOT_PASSWORD: root123
-    MYSQL_DATABASE: mysql
-  volumes:
-    - mysql-data:/var/lib/mysql
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: mysql
+    volumes:
+      - mysql-data:/var/lib/mysql
 
   mysite:
-    build: .
+    image: arunkumar2202/devops-flask-app:latest
     container_name: mysite
     restart: always
     depends_on:
@@ -24,4 +24,4 @@ services:
       MYSQL_DB: mysql
 
 volumes:
-  mysql-data:
+  mysql-data:  
