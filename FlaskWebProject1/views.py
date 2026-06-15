@@ -1,3 +1,4 @@
+
 import mysql.connector
 from FlaskWebProject1 import app
 from flask import jsonify
@@ -23,3 +24,7 @@ def db_test():
     conn.close()
 
     return f"MySQL Connected: {result}"
+
+@app.route('/version')
+def version():
+    return {"version": "1.0"}
