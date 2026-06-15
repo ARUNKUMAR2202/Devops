@@ -1,5 +1,10 @@
 import mysql.connector
 from FlaskWebProject1 import app
+from flask import jsonify
+
+@app.route("/version")
+def version():
+    return jsonify({"version": "1.0"})
 
 @app.route('/db')
 def db_test():
