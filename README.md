@@ -1,4 +1,4 @@
-"C:\Users\ARUNKUMAR\Downloads\My-sys_key_0611.pem" azureuser@20.40.58.126
+ssh -i "C:\Users\ARUNKUMAR\Downloads\My-sys_key_0611.pem" azureuser@20.40.58.126
 
 sudo apt update
 sudo apt upgrade -y
