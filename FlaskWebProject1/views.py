@@ -25,4 +25,7 @@ def db_test():
 
     return f"MySQL Connected: {result}"
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2626f148537bf0b16f246999423668391734748f
