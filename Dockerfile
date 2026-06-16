@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["python", "runserver.py"]
+CMD ["python", "FlaskWebProject1/app.py"]

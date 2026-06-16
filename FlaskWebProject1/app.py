@@ -53,6 +53,9 @@ def home():
         <li><a href="/mysql-time">MySQL Time</a></li>
     </ul>
     """
+@app.route("/version")
+def version():
+    return jsonify({"version": "1.0"})
 
 @app.route("/hello/<name>")
 def hello(name):
