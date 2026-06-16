@@ -25,6 +25,4 @@ def db_test():
 
     return f"MySQL Connected: {result}"
 
-@app.route('/version')
-def version():
-    return {"version": "1.0"}
+
