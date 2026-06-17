@@ -36,3 +36,6 @@ docker build -t flask-app .
 
 # Run container
 docker run -d --name flask-app-test -p 8080:8080 flask-app
+
+#VM host
+http://74.225.252.211:8080
