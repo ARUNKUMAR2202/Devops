@@ -43,6 +43,8 @@ def home():
     <p><b>Class:</b> DevOps</p>
 
     <h3>System Information</h3>
+    <p><b>Instance:</b> {INSTANCE}</p>
+    <p><b>Version:</b> {VERSION}</p>
     <p><b>Current Time:</b> {current_time}</p>
     <p><b>Status:</b> Running Successfully</p>
 
@@ -58,7 +60,6 @@ def home():
     </ul>
     """
 
-
 @app.route("/hello/<name>")
 def hello(name):
     return jsonify(message=f"Hello, {name}!", data=getData())
@@ -73,9 +74,9 @@ def data_route():
         fruit=getData(),
         animal=getData2(),
         color=getData3()
-  )
+    )
 
-# --- Step 7: MySQL Time Endpoint ---
+# --- MySQL Time Endpoint ---
 @app.route("/mysql-time")
 def mysql_time():
     try:
@@ -90,17 +91,14 @@ def mysql_time():
             cursor.execute("SELECT CURRENT_TIMESTAMP()")
             result = cursor.fetchone()
         conn.close()
-        return jsonify(mysql_time=str(result[0]), status="connected ")
+        return jsonify(mysql_time=str(result[0]), status="connected")
     except Exception as e:
-        return jsonify(error=str(e), status="MySQL not reachable "), 500
+        return jsonify(error=str(e), status="MySQL not reachable"), 500
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d196d91b56afd8f2f12d8d53a440099a0cc4b60d
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
-
+# --- Version / Instance identity endpoint (used for load-balancing demo) ---
 @app.route("/version")
 def version():
     return jsonify(instance=INSTANCE, version=VERSION)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
