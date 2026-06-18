@@ -18,7 +18,7 @@ services:
       - "8002:8000"
     environment:
       INSTANCE_NAME: flask-app-2
-      APP_VERSION: "1.0"
+      APP_VERSION: "2.0"
 
 
 
